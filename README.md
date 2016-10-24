@@ -1,5 +1,9 @@
 # Komponentové a udalosťami riadené programovanie zariadení na platforme Arduino
 
+Diplomová práca
+Autor: Patrik Pekarčík
+Vedúci práce: František Galčík
+
 ## Ciele práce
 
 1. Preskúmať, analyzovať a porovnať existujúce prístupy, softvérové aplikácie a knižnice využívané pri programovaní Arduino zariadení.
