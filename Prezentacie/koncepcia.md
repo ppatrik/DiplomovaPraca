@@ -1,4 +1,4 @@
-* Koncept prezentácií
+# Koncept prezentácií
 
 Pri prezentacii by som asi zacal, ze ukazem nejake Arduino (idealne
 nano) a poviem, ze toto zariadenie je jedno z mnohych zariadeni na
