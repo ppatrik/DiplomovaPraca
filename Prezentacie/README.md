@@ -1,5 +1,8 @@
 # 1. prezentácia diplomovej práce
 
+* Prezentácia [PDF](prezentacia.pdf) a [Powerpoint](prezentacia.pptx)
+* [Rozšírené zadanie k prezentácii](prezentacia.docx) - rozpracované
+
 # Demo projekt
 
 Led dioda ma blikat v 1 sekundovom intervale (1 sekundu svieti potom 1 sekundu nesvieti). 
