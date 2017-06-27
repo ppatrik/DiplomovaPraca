@@ -1,0 +1,19 @@
+\newcommand{\format}[1]{{\centering\large\textbf{#1 \\}}}
+\newcommand{\formatCase}[1]{{\centering\large\textbf{\MakeUppercase #1 \\}}}
+
+\chapter*{Úvod}
+\addcontentsline{toc}{chapter}{Úvod}  %pridanie nadpisu do obsahu
+
+\formatCase\nazov
+\vspace{1em}
+
+IoT alebo „internet vecí“ je pojem resp. téma, o ktorej dnes počujeme zo všetkých médií. Vývoju IoT zariadení sa venujú známe spoločnosti, ako napríklad firma Philips, ktorá medzi inými ponúka aj inteligentné osvetlenie. Popularizácii IoT pomohol aj príchod zariadení Arduino. Arduino je open-source platforma s mikrokontrolerom ATmega, ktorá vývojárom neponúkla iba hardvér s procesorom, ale aj pomerne jednoduché vývojové prostredie Arduino IDE. Vývoj na platforme Arduino je založený na programovacom jazyku C++. 
+
+Program pre platformu Arduino sa skladá z dvoch základných funkcií:
+
+\begin{itemize}
+\item setup() – funkcia spustená iba raz po zapnutí zariadenia
+\item loop() – periodicky spúšťaná funkcia, pokiaľ je zariadenie zapnuté
+\end{itemize}
+
+Tento prístup nepodporuje efektívny multitasking, na aký sú programátori zvyknutí z programovania pre operačný systém. K rozšíreniu týchto zariadení prispela aj ich nízka cena, ktorá sa pohybuje od niekoľkých dolárov. Cena zariadenia Arduino Nano sa pohybuje okolo 2 dolárov, za čo dostaneme úložný priestor FLASH 32 kB a operačnú pamäť SRAM 2048 B. Obmedzená veľkosť operačnej pamäte nám zatvára dvere pred použitím komplexnejšieho operačného systému, čo však nevylučuje vytvorenie minimalistického plánovača úloh pre toto zariadenie. Pri návrhu možného fungovania sa chceme inšpirovať komponentovo orientovaným prístupom, aký poznáme z vývoja používateľských aplikácií v operačných systémoch (napr. Swing v jazyku Java).

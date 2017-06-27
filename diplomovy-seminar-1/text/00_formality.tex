@@ -1,0 +1,112 @@
+\newcommand{\format}[1]{{\centering\large\textbf{#1 \\}}}
+\newcommand{\formatCase}[1]{{\centering\large\textbf{\MakeUppercase #1 \\}}}
+
+%titulna strana ========================================================
+\formatCase\skola
+\formatCase\fakulta
+
+\vspace{10cm}
+
+\formatCase\nazov
+\vspace{1em}
+\format\typPrace
+
+\vfill
+
+\format{\rok \hfill \autor}
+\thispagestyle{empty}
+
+%uvodna strana =========================================================
+\newpage
+\setcounter{page}{1}
+\formatCase\skola
+\formatCase\fakulta
+
+\vspace{10cm}
+
+\formatCase\nazov
+\vspace{1em}
+\format\typPrace
+
+\vfill
+
+\noindent
+\begin{tabular}{l l}
+	Študijný program: & \studijnyProgram \\
+	Študijný odbor:  & \studijnyOdbor \\
+	Školiace pracovisko: \hspace{1cm} & \skoliacePracovisko \\
+	\ifdefined\veduciPrace
+		Vedúci práce: & \veduciPrace \\
+	\else 
+		Školiteľ: & \skolitel \\
+	\fi
+	\ifdefined\konzultantPrace
+		Konzultant: & \konzultantPrace \\
+	\fi
+\end{tabular}
+
+\vfill
+
+\format{\mesto \space \rok \hfill \autor}
+\thispagestyle{empty}
+
+%zadanie ===========================================================
+\ifdefined\skrytZadanie
+
+\else
+	\newpage
+	\thispagestyle{empty}
+
+	\ifdefined\zadaniePDF
+		\includepdf[pages={1}]{\zadaniePDF}
+	\else
+		\ifdefined\zadanieObrazok
+			\includegraphics[width=\textwidth, height=\textheight]{\zadanieObrazok}
+		\else
+			\null
+			\vfill
+			\format{Zadanie}
+			\vfill
+		\fi
+	\fi
+\fi
+
+%podakovanie ===========================================================
+\ifdefined\podakovanie
+	\newpage
+	\null
+	\vfill
+	{\noindent\large\bf Poďakovanie} 
+	\vspace{1.5cm}
+	
+	\podakovanie
+	\vspace{1cm}
+\fi
+\thispagestyle{empty}
+
+%abstrakty =============================================================
+\newpage
+{\noindent\large\bf Abstrakt}
+\vspace{1cm}
+
+\noindent \abstraktPoSlovensky \\
+
+{\noindent \textbf{Kľúčové slová:} \emph{\klucoveSlovaPoSlovensky}.} 
+\thispagestyle{empty}
+
+\newpage
+{\noindent\large\bf Abstract}
+\vspace{1cm}
+ 
+\noindent \abstraktPoAnglicky \\
+
+{\noindent \textbf{Keywords:} \emph{\klucoveSlovaPoAnglicky}.}
+\thispagestyle{empty}
+
+%obsah dokumentu =======================================================
+
+\newpage
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents
+\thispagestyle{empty}
+\newpage{}

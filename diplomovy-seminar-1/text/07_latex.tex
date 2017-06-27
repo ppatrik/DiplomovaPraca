@@ -1,0 +1,77 @@
+\chapter{Príklady použitia \LaTeX -u}
+V tejto kapitole Vás oboznámime o minimálnych základoch použitia \LaTeX -u.
+
+\section*{Korektná kompilácia do PDF}
+Korektná kompilácia sa skladá zo štyroch spustených príkazov po sebe:
+\begin{enumerate}
+	\item pdflatex main.tex (vytvorenie zoznamu krížových referencií),
+	\item bibtex main (vytvorenie bibliografických záznamov z .bib súboru na základe použitých krížových referencií),
+	\item pdflatex main.tex (priradenie bibliografických záznamov ku krížovým referenciám),
+	\item pdflatex main.tex (vytvorenie kompletného PDF dokumentu).
+\end{enumerate}
+
+\section*{Prehľad použitia prostredí v \LaTeX -u}
+V tejto sekcii si ukážeme používanie základných prostredí dokumentov. Medzi ne patria obrázok, tabuľka, rovnica a algoritmus. Každé prostredie musí mať svoj popis a musí naň odkazovať text. Naviac každé prostredie má vlastné číslovanie.
+
+\subsection*{Obrázok}
+Ilustračný obrázok \ref{pic-reference} zobrazuje jednoduchý text s pozadím.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=4cm]{pics/picture.jpg}
+		\caption{Popis obrázka.}
+		\label{pic-reference}
+	\end{center}
+\end{figure}
+
+
+\subsection*{Tabuľka}
+V tabuľke \ref{tab-results} prezentujeme výsledky práce.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|l|c|r|}
+			\hline
+			& Dataset 1 & Dataset 2 & Skóre \\
+			\hline
+			metóda 1 & 97\% & 82\% & 89\% \\
+			\hline
+			metóda 2 & 99\% & 90\% & 94\% \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Tabuľka výsledku experimentu.}
+	\label{tab-results}
+\end{table}
+
+
+\subsection*{Rovnica}
+Rovnica, na ktorú sa chceme z textu odkazovať, má mať svoj číselný identifikátor umiestnený vpravo. Číselný identifikátor nemusí mať, ak je to súčasť súvislého textu. Napr. priemernú rýchlosť vypočítame nasledovne (identifikátor sme ponechali, aby sme sa vedeli odkázať z ďalšieho odseku):
+\begin{equation} \label{eq-reference}
+	v = \frac{\Delta s}{\Delta t}.
+\end{equation}
+
+Priemerná rýchlosť je pomer zmeny dráhy za časový interval, počas ktorého táto zmena nastala (rovnica \ref{eq-reference}).
+
+\subsection*{Algoritmus}
+\LaTeX \space má niekoľko spôsobov ako zapísať algoritmus ako pseudokód. Jednotlivé spôsoby sú popísané na stránke \url{https://en.wikibooks.org/wiki/LaTeX/Algorithms}. Ukážeme si príklad pseudokódu pomocou balíčka \texttt{algpseudocode}, čo je formátovanie pseudokódu z balíčka \texttt{algorithmicx}. Ako príklad sme vybrali Euklidov algoritmus pozri algoritmus \ref{alg-euclid}.
+
+\begin{algorithm}[H]
+	\caption{Euklidov algoritmus.}\label{alg-euclid}
+	\begin{algorithmic}[1]
+		\Procedure{Euclid}{$a,b$}\Comment{Najväčší spoločný deliteľ čísel $a$ a $b$}
+		\State $r\gets a\bmod b$
+		\While{$r\not=0$}\Comment{Poznáme odpoveď ak $r$ je 0}
+		\State $a\gets b$
+		\State $b\gets r$
+		\State $r\gets a\bmod b$
+		\EndWhile\label{euclidendwhile}
+		\State \Return $b$\Comment{Najväčší spoločný deliteľ je $b$}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+\section*{Bibliografické odkazy, citácie a poznámky pod čiarou}
+Bibliografické odkazy v tvare BibTeXu sa dajú nájsť vyhľadávačom scholar.google.sk (stlačíte citovať pod nájdenou prácou, potom stlačíte na formát BibTeX). POZOR! Tieto bibliografické odkazy nemusia byť správne alebo úplné.
+
+Príklad použitia citácie: \cite{einstein}, \cite{latexcompanion}, \cite{knuthwebsite}\footnote{V tomto dokumente používame metódu citovania využívajúcu poradové číslo bibliografického záznamu.}.
